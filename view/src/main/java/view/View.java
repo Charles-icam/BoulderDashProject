@@ -257,4 +257,10 @@ public final class View extends Observable implements IView, KeyListener {
 	public BoardFrame getBoardFrame() {
 		return boardFrame;
 	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 }

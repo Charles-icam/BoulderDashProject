@@ -6,38 +6,38 @@ import java.util.Observable;
 /**
  * <h1>The Interface IMap.</h1>
  *
- * @author Laetitia
+ * @author Christian Byemba
  * @version 0.1
  */
 public interface IMap {
 
     /**
-     * Gets the width.
+     * Getter de width (la largeur).
      *
-     * @return the width
+     * @return width
      */
     int getWidth();
 
     /**
-     * Gets the height.
+     * Getter de height(la hauteur).
      *
-     * @return the height
+     * @return height
      */
     int getHeight();
 
     /**
-     * Gets on the map XY.
+     * Obtenir la map XY.
      *
      * @param x
-     *            the x
+     *            Coordonnée x
      * @param y
-     *            the y
-     * @return the on the road XY
+     *            Coordonnée y
+     * @return la route
      */
     IElement getOnTheMapXY(int x, int y);
     
     /**
-     * Sets on the Map XY 
+     * Modifie la map XY 
      * @param element
      * @param x
      * @param y
@@ -45,14 +45,14 @@ public interface IMap {
     void setOnTheMapXY(IElement element, final int x, final int y);
 
     /**
-     * Sets the mobile has changed.
+     * Setter du mobile qui a changé.
      */
     void setMobileHasChanged();
 
     /**
-     * Gets the observable.
+     * Obtenir l'observable.
      *
-     * @return the observable
+     * @return observable
      */
     Observable getObservable();
 

@@ -5,21 +5,21 @@ import fr.exia.showboard.ISquare;
 
 /**
  *   <h1>The Interface IElement.</h1>
- * @author Laetitia
+ * @author Eliott Holel
  *
  */
 public interface IElement extends ISquare {
 	/**
-	 * Gets the sprite.
+	 * Getter de sprite.
 	 *
-	 * @return the sprite
+	 * @return le sprite
 	 */
 	Sprite getSprite();
 
 	/**
-	 * Gets the permeability.
+	 * Getter de la permeability.
 	 *
-	 * @return the permeability
+	 * @return la permeability
 	 */
 	Permeability getPermeability();
 

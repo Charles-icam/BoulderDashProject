@@ -4,17 +4,17 @@ import entity.Permeability;
 import entity.Sprite;
 
 /**
- * @author Laetitia
+ * @author Junior Mabaya
  *
  */
 
 public class MonsterR extends Mobile {
 
-	/** The Constant SPRITE. */
+	/** La Constante SPRITE. */
 	private static final Sprite SPRITE = new Sprite('R', "redMonster.png");
 
 	/**
-	 * Instantiates a new monster.
+	 * Constructeur.
 	 */
 	public MonsterR() {
 		super(SPRITE, Permeability.KILLABLE);
@@ -26,7 +26,7 @@ public class MonsterR extends Mobile {
 	}
 
 	/**
-	 *Gets the diamonds
+	 *Getter des diamonds
 	 */
 	@Override
 	public int getDiamonds() {
@@ -34,7 +34,7 @@ public class MonsterR extends Mobile {
 	}
 
 	/**
-	 *Gets the diamonds
+	 *Getter des diamonds
 	 */
 	@Override
 	public void grabDiamond() {

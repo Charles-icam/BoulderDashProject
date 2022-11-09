@@ -6,18 +6,19 @@ public abstract class Element implements IElement {
 
 
     /**
-     * The sprite.
+     * L'attribut sprite.
      */
     private Sprite sprite;
 
     /**
-     * The permeability.
+     * L'attribut permeability de type Permeability.
      */
     private Permeability permeability;
 
     private Boolean hasChanged = false;
 
     /**
+     * Le constructeur d'un nouveau element
      * @param sprite
      * @param permeability
      */
@@ -28,16 +29,16 @@ public abstract class Element implements IElement {
 
 
     /**
-     * Gets the sprite
+     * Getter de sprite
      */
     public final Sprite getSprite() {
         return this.sprite;
     }
 
     /**
-     * Sets the sprite.
+     * Setter de sprite.
      *
-     * @param sprite the new sprite
+     * @param sprite le nouveau sprite
      */
 
     protected final void setSprite(final Sprite sprite) {
@@ -54,27 +55,35 @@ public abstract class Element implements IElement {
     }
 
     /**
-     * Sets the permeability.
+     * Setter de la permeability.
      *
-     * @param permeability the new permeability
+     * @param permeability la nouvelle permeability
      */
     private void setPermeability(final Permeability permeability) {
         this.permeability = permeability;
     }
 
     /*
-     * Gets the Image
+     * Getter de Image
      *
      */
     public final Image getImage() {
         return this.getSprite().getImage();
     }
 
-
+    /*
+     * Getter de hasChanged
+     *
+     */
+    
     public Boolean getHasChanged() {
         return hasChanged;
     }
 
+    /*
+     * Setter de hasChanged
+     *
+     */
     public void setHasChanged(Boolean hasChanged) {
         this.hasChanged = hasChanged;
     }

@@ -16,7 +16,7 @@ import entity.motionless.MotionlessElementsFactory;
 
 public final class Controller implements IBoulderDashController, IOrderPerformer {
 
-    private static final int speed = 200;
+    private static final int speed = 250;
     private IView view;
     private IModel model;
     private UserOrder stackOrder;

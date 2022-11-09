@@ -8,36 +8,36 @@ import entity.Sprite;
 import entity.motionless.MotionlessElementsFactory;
 
 /**
- * <h1>The MyVehicle Class.</h1>
+ * <h1>La Classe MyPlayer.</h1>
  *
- * @author Laetitia
+ * @author Junior Mabaya
  */
 public class MyPlayer extends Mobile {
 
-	/** The Constant SPRITE. */
+	/** La Constante SPRITE. */
 	private static final Sprite sprite = new Sprite('H', "pNope.png");
-	/** The Constant spriteTurnLeft. */
+	/** La Constante spriteTurnLeft. */
 	private static final Sprite spriteTurnLeft = new Sprite('H', "pLeft.png");
-	/** The Constant spriteTurnRight. */
+	/** La Constante spriteTurnRight. */
 	private static final Sprite spriteTurnRight = new Sprite('H', "pRight.png");
-	/** The Constant spriteTurnUp. */
+	/** La Constante spriteTurnUp. */
 	private static final Sprite spriteTurnUp = new Sprite('H', "pUp.png");
-	/** The Constant spriteTurnDown. */
+	/** La Constante spriteTurnDown. */
 	private static final Sprite spriteTurnDown = new Sprite('H', "pDown.png");
-	/** The Constant spriteDead. */
+	/** La Constante spriteDead. */
 	private static final Sprite spriteDead = new Sprite('H', "pDead.png");
-	/** The Constant spriteWin. */
+	/** La Constante spriteWin. */
 	private static final Sprite spriteWin = new Sprite('H', "pWin.png");
 
-	/** The Diamond counter. */
+	/** Le compteur des Diamonds. */
 	private int nb_diamonds;
 
 	/**
-	 * Instantiates a new my player.
+	 * Constructeur d'un nouveau joueur.
 	 *
-	 * @param x   the x
-	 * @param y   the y
-	 * @param map the map
+	 * @param x   le x
+	 * @param y   le y
+	 * @param map la map
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	public MyPlayer(final int x, final int y, final IMap map) throws IOException {
@@ -52,7 +52,7 @@ public class MyPlayer extends Mobile {
 
 
 	/**
-	 * move left for player
+	 * Méthode pour déplacer le joueur à gauche
 	 * 
 	 */
 	@Override
@@ -71,7 +71,7 @@ public class MyPlayer extends Mobile {
 	}
 
 	/**
-	 * move right for player
+	 * Méthode pour déplacer le joueur à droite
 	 */
 	@Override
 	public final void moveRight() {
@@ -89,7 +89,7 @@ public class MyPlayer extends Mobile {
 	}
 
 	/**
-	 * move down for player
+	 * Méthode pour déplacer le joueur en haut
 	 */
 	public final void moveDown() {
 		if ((getMap().getOnTheMapXY((getX()), (getY() + 1)).getPermeability() != Permeability.WALL) && (getMap().getOnTheMapXY((getX()), (getY() + 1))).getPermeability() != Permeability.BOULDER) {
@@ -104,7 +104,7 @@ public class MyPlayer extends Mobile {
 	}
 
 	/**
-	 * move up for the player
+	 * Méthode pour déplacer le joueur au dessus
 	 */
 	public final void moveUp() {
 		if ((getMap().getOnTheMapXY((getX()), (getY() - 1)).getPermeability() != Permeability.WALL) && (getMap().getOnTheMapXY((getX()), (getY() - 1))).getPermeability() != Permeability.BOULDER) {
@@ -120,7 +120,7 @@ public class MyPlayer extends Mobile {
 	}
 
 	/**
-	 * player dies
+	 * La mort du joueur
 	 * 
 	 */
 	@Override
@@ -130,7 +130,7 @@ public class MyPlayer extends Mobile {
 	}
 
 	/**
-	 * player wins
+	 * La victoire du joueur
 	 *
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class MyPlayer extends Mobile {
 	}
 
 	/**
-	 * player does nothing
+	 * Le joueur ne fait rien
 	 * 
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class MyPlayer extends Mobile {
 
 
 	/**
-	 * gets the diamond
+	 * getter des diamands
 	 */
 	public void grabDiamond() {
 		if (this.getMap().getOnTheMapXY(this.getX(), this.getY()).getPermeability() == Permeability.DIAMOND) {
@@ -172,7 +172,7 @@ public class MyPlayer extends Mobile {
 	}
 
 	/**
-	 * push rock to right
+	 * Méthode pour pousser le rocher à droite
 	 */
 	public void pushBoulderRight() {
 		if (this.getMap().getOnTheMapXY(this.getX() + 1, this.getY()).getPermeability() == Permeability.BOULDER && this.getMap().getOnTheMapXY(this.getX() + 2, this.getY()).getPermeability() == Permeability.WALKABLE) {
@@ -184,7 +184,7 @@ public class MyPlayer extends Mobile {
 	}
 
 	/**
-	 * push rock to left
+	 * Méthode pour pousser le rocher à gauche
 	 */
 	public void pushBoulderLeft() {
 		if (this.getMap().getOnTheMapXY(this.getX() - 1, this.getY()).getPermeability() == Permeability.BOULDER && this.getMap().getOnTheMapXY(this.getX() - 2, this.getY()).getPermeability() == Permeability.WALKABLE) {
@@ -196,7 +196,7 @@ public class MyPlayer extends Mobile {
 	}
 
 	/**
-	 * gets the diamond
+	 * getter des diamands
 	 */
 	public int getDiamonds() {
 		return nb_diamonds;

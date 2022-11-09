@@ -1,9 +1,9 @@
 package entity;
 
 /**
- * <h1>The Permeability Enum.</h1>
+ * <h1>Les Permeability Enum.</h1>
  *
- * @author Laetitia
+ * @author Charles Muamba
  * @version 0.1
  */
 public enum Permeability {

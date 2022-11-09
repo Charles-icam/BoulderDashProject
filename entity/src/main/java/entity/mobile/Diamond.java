@@ -5,19 +5,19 @@ import entity.Sprite;
 
 /**
  * <h1> The Diamond class</h1>
- * @author Laetitia
+ * @author Junior Mabaya
  *
  */
 public class Diamond extends Mobile{
 
-	/** The Constant SPRITE. */
+	/** La Constante SPRITE. */
 	private static final Sprite SPRITE = new Sprite('*', "diamond.png");
 
 
 	/**
-	 * Instantiates a new obstacle.
+	 * Constructeur du Diamand.
 	 */
-	 Diamond() {
+	 public Diamond() {
 		super(SPRITE, Permeability.DIAMOND);
 	}
 
@@ -29,7 +29,7 @@ public class Diamond extends Mobile{
 	}
 
 	/**
-	 * Gets the diamonds
+	 * Getter des diamonds
 	 */
 	@Override
 	public int getDiamonds() {
@@ -38,7 +38,7 @@ public class Diamond extends Mobile{
 	}
 
 	/**
-	 *Gets the diamonds
+	 *Obtenir les diamonds
 	 */
 	@Override
 	public void grabDiamond() {

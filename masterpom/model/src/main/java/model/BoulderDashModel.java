@@ -16,7 +16,7 @@ public class BoulderDashModel implements IModel {
 	/** la map. */
 	private IMap map;
 
-	/** MON JEU. */
+	/** le joueur. */
 	private IMobile myPlayer;
 
 	/**

@@ -5,11 +5,11 @@ import entity.Sprite;
 
 public class Boulder extends Mobile {
 
-	 /** The Constant SPRITE. */
+	 /** La Constante du SPRITE. */
     private static final Sprite SPRITE = new Sprite('O', "boulder.png");
 
     /**
-     * Instantiates a new obstacle.
+     * Définition du constructeur.
      */
     public Boulder() {
         super(SPRITE, Permeability.BOULDER);
@@ -36,14 +36,16 @@ public class Boulder extends Mobile {
     	super.moveDown();
     }
 
-	@Override
+    /**
+     *Le Getter des diamands
+     */
+    @Override
 	public int getDiamonds() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
     /**
-     *Gets the diamonds
+     *Le Getter des diamands
      */
     @Override
     public void grabDiamond() {

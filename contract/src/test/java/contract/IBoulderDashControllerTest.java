@@ -12,7 +12,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * @author Jean mabagwa
+ * @author Eliott Holel
  *
  */
 public class IBoulderDashControllerTest {
@@ -46,7 +46,7 @@ public class IBoulderDashControllerTest {
 	}
 
 	/**
-	 * Test method for {@link contract.IBoulderDashController#play()}.
+	 * Méthode de test pour {@link contract.IBoulderDashController#play()}.
 	 */
 	@Test
 	public final void testPlay() {
@@ -54,7 +54,7 @@ public class IBoulderDashControllerTest {
 	}
 
 	/**
-	 * Test method for {@link contract.IBoulderDashController#getOrderPerformer()}.
+	 * Méthode de test pour {@link contract.IBoulderDashController#getOrderPerformer()}.
 	 */
 	@Test
 	public final void testGetOrderPerformer() {

@@ -56,14 +56,14 @@ public class DBConnection {
 	/**
 	 * obtenir l'url
 	 */
-	public String getURL() {
+	public static String getURL() {
 		return URL;
 	}
 
 	/**
 	 * obtenir l'utilisateur
 	 */
-	public  String getUSER() {
+	public static  String getUSER() {
 		return USER;
 	}
 
@@ -71,7 +71,7 @@ public class DBConnection {
 	 * obtenir le mot de passe
 	 * @return
 	 */
-	public  String getPASSWD() {
+	public static  String getPASSWD() {
 		return PASSWD;
 	}
 }

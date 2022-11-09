@@ -5,13 +5,13 @@ import entity.Sprite;
 
 public class MonsterG extends Mobile{
 
-	/** The Constant SPRITE. */
+	/** La Constante SPRITE. */
 	private static final Sprite SPRITE = new Sprite('G', "greenMonster.png");
 
 	/**
-	 * Instantiates a new monster.
+	 * Constructeur d'un nouveau monstre.
 	 */
-	MonsterG() {
+	public MonsterG() {
 		super(SPRITE, Permeability.KILLABLE);
 	}
 
@@ -25,7 +25,7 @@ public class MonsterG extends Mobile{
 		return 0;
 	}
 	/**
-	 *Gets the diamonds
+	 *Getter des diamonds
 	 */
 	@Override
 	public void grabDiamond() {

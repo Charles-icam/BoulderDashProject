@@ -14,54 +14,97 @@ import javax.imageio.ImageIO;
 
 public class Sprite {
 
-	/** The image. */
+	/** L'image. */
     private Image   image;
 
-    /** The image name. */
+    /** Le nom de l'image. */
     private String  imageName;
 
-    /** The console image. */
+    /** L'image de la console. */
     private char    consoleImage;
 
-    /** The is image loaded. */
+    /** L'image chargée. */
     private boolean imageLoaded;
-
+    
+    /**
+     * Instatiation d'un sprite
+     * @param character
+     * @param imageName
+     */
     public Sprite(final char character, final String imageName) {
         this.setConsoleImage(character);
         this.setImageName(imageName);
     }
-
+    
+    /**
+     * Instatiation d'un sprite
+     * @param character
+     */
     public Sprite(final char character) {
         this(character, "noimage.jpg");
     }
 
+    /**
+     * Getter de l'image
+     * @return
+     */
     public final Image getImage() {
         return this.image;
     }
 
+    /**
+     * Méthode pour chargé une image
+     * @throws IOException
+     */
     public final void loadImage() throws IOException {
         this.setImage(ImageIO.read(new File("sprites\\" + this.getImageName())));
     }
-
+    
+    /**
+     * Obtenir l'image de la console
+     * @return consoleImage
+     */
     public final char getConsoleImage() {
         return this.consoleImage;
     }
-
+    
+    /**
+     * Setter de l'image
+     * @param image
+     */
     private void setImage(final Image image) {
         this.image = image;
     }
-
+    
+    /**
+     * Setter de consoleImage
+     * @param consoleImage
+     */
     private void setConsoleImage(final char consoleImage) {
         this.consoleImage = consoleImage;
     }
-
+    
+    /**
+     * Getter de imageName
+     * @return imageName
+     */
     public final String getImageName() {
         return this.imageName;
     }
-
+    
+    /**Modifie le nom de l'image
+     * 
+     * @param imageName
+     */
+   
     private void setImageName(final String imageName) {
         this.imageName = imageName;
     }
+    
+    /**
+     * Méthode qui vérifie si l'image a été chargé
+     * @return
+     */
 
     public final boolean isImageLoaded() {
         return this.imageLoaded;

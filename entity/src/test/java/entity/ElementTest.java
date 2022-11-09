@@ -11,6 +11,11 @@ import entity.mobile.Boulder;
 import entity.mobile.MonsterG;
 import entity.mobile.MonsterR;
 
+/**
+ *  <h1>la Classe ElementTest.</h1>
+ * 
+ */
+
 public class ElementTest {
 	static Boulder boulder;
 	static MonsterG monsterG;
@@ -26,6 +31,9 @@ public class ElementTest {
 
 	@Before
 	public void testElement() throws Exception {
+		/**
+		 * Instatiation des éléments
+		 */
 		boulder = new Boulder();
 		monsterG = new MonsterG();
 		monsterR = new MonsterR();

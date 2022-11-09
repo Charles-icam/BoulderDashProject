@@ -4,16 +4,16 @@ import entity.Permeability;
 import entity.Sprite;
 
 /**
- * @author Laetitia
+ * @author Eliott Holel
  *
  */
 public class Background extends MotionlessElement{
 	
-	/** The Constant SPRITE. */
+	/** La Constante SPRITE. */
     private static final Sprite SPRITE = new Sprite('.', "Background.png");
 
     /**
-     * Instantiates a new background.
+     * Instantiation d'un nouveau background.
      */
     Background() {
         super(SPRITE, Permeability.WALKABLE);

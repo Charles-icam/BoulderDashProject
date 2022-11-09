@@ -2,6 +2,11 @@ package model.DAO;
 
 import static org.junit.Assert.*;
 
+/**
+ *  <h1>la Classe DBConnectionTest.</h1>
+ * 
+ */
+
 import java.sql.Connection;
 
 import org.junit.After;
@@ -12,6 +17,9 @@ import org.junit.Test;
 
 public class DBConnectionTest {
 	
+	/**
+	 * L'adresse URL
+	 */
 	private static String URL = "jdbc:mysql://localhost/jpublankproject1?autoReconnect=true&useSSL=false";
 	/**
 	 * l'utilisateur

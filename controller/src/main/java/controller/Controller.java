@@ -16,7 +16,10 @@ import entity.motionless.MotionlessElementsFactory;
 
 public final class Controller implements IBoulderDashController, IOrderPerformer {
 
-    private static final int speed = 250;
+    /**
+     * La constante speed
+     */
+	private static final int speed = 300;
     private IView view;
     private IModel model;
     private UserOrder stackOrder;
@@ -26,23 +29,33 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     private int rdirection;
     private int gDirection;
     private boolean canChange = true;
+    
+    /**
+     * Instatiation du constructeur
+     * @param view
+     * @param model
+     */
     public Controller(final IView view, final IModel model) {
         this.setView(view);
         this.setModel(model);
         this.clearStackOrder();
     }
+    
+    /**
+     * Méthode jouer
+     */
     @Override
     public final void play() {
         while (this.getModel().getMyPlayer().isAlive() == true && hasWon == false) {
 
-            // --- Game Speed ---
+            // --- Vitesse du jeu ---
             try {
                 Thread.sleep(speed);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
-            // --- Player ---
+            // --- Joueur ---
             this.movePlayer();
             this.killPlayer();
             this.winPlayer();
@@ -50,7 +63,7 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
             gDirection = gDirection + 1;
             rdirection = rand.nextInt(4);
 
-            // --- Update Mobile Entities on Map
+            // --- Mise à jour des entités mobiles sur la map
             for (int y = this.getModel().getMap().getHeight() - 1; y > 0; y--) {
                 for (int x = this.getModel().getMap().getWidth() - 1; x > 0; x--) {
 
@@ -78,7 +91,7 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
                 }
             }
 
-            // --- Update View ---
+            // --- Mise à jour du View ---
             this.getModel().getMap().getHasChanged().clear();
             this.canChange = true;
             this.getView().followMyPlayer();
@@ -89,7 +102,7 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
 
 
     /**
-     * movePlayer method
+     * La méthode movePlayer(déplacer le joueur)
      */
     public void movePlayer() {
         switch (this.getStackOrder()) {
@@ -118,7 +131,7 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
-     * killPlayer method
+     * La méthode killPlayer (mort du joueur)
      */
     public void killPlayer() {
         if ((this.getModel().getMap().getOnTheMapXY((this.getModel().getMyPlayer().getX()), ((this.getModel().getMyPlayer().getY()))).getPermeability() == Permeability.KILLABLE)) {
@@ -126,7 +139,10 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
             this.getView().displayMessage("Vous avez échoué! Voulez-vous continuer ?");
         }
     }
-
+    
+    /**
+     * La méthode winPlayer (victoire du joueur)
+     */
     public void winPlayer() {
         if ((this.getModel().getMap().getOnTheMapXY((this.getModel().getMyPlayer().getX()), ((this.getModel().getMyPlayer().getY()))).getPermeability() == Permeability.EXIT) && this.getModel().getMyPlayer().getDiamonds() >= diamondGoal) {
             this.hasWon = true;
@@ -137,7 +153,9 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
 
 
     /**
-     * Boulders Gravity
+     * Méthode gravityBoulder qui gère la gravité de la pierre
+     * @param x
+     * @param y
      */
     public void gravityBoulder(int x, int y) {
         if (this.getModel().getMap().getOnTheMapXY(x, y).getPermeability() == Permeability.BOULDER && this.getModel().getMap().getOnTheMapXY(x, y + 1).getPermeability() == Permeability.WALKABLE) {
@@ -147,9 +165,11 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
             }
         }
     }
-
+    
     /**
-     * Boulders Diagonal Gravity
+     * La méthode qui gère la gravité diagonal des rochers
+     * @param x
+     * @param y
      */
     public void gravityDiagBoulder(int x, int y) {
         if (this.getModel().getMap().getOnTheMapXY(x, y).getPermeability() == Permeability.BOULDER && this.getModel().getMap().getOnTheMapXY(x, y + 1).getPermeability() == Permeability.BOULDER) {
@@ -173,10 +193,11 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
             }
         }
     }
-
-
+    
     /**
-     * Diamonds Gravity
+     * La Diamonds Gravity qui gère la gravité des diamands
+     * @param x
+     * @param y
      */
     public void gravityDiamond(int x, int y) {
         if (this.getModel().getMap().getOnTheMapXY(x, y).getPermeability() == Permeability.DIAMOND && this.getModel().getMap().getOnTheMapXY(x, y + 1).getPermeability() == Permeability.WALKABLE) {
@@ -189,9 +210,11 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
             }
         }
     }
-
+    
     /**
-     * Diamonds Diagonal Gravity
+     * La méthode qui gère la gravité diagonal des diamands
+     * @param x
+     * @param y
      */
     public void gravityDiagDiamond(int x, int y) {
         if (this.getModel().getMap().getOnTheMapXY(x, y).getPermeability() == Permeability.DIAMOND && this.getModel().getMap().getOnTheMapXY(x, y + 1).getPermeability() == Permeability.DIAMOND) {
@@ -227,8 +250,11 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
         }
     }
 
+       
     /**
-     * Green Monsters Move method
+     * Méthode de déplacement des monstres verts 
+     * @param x
+     * @param y
      */
     public void moveGMonster(int x, int y) {
         if (gDirection <= 10) {
@@ -242,7 +268,9 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
-     * Monster MoveRight method
+     * Méthode de déplacement du monstre vert vers la droite
+     * @param x
+     * @param y
      */
     public void MGMoveRight(int x, int y) {
         if (this.getModel().getMap().getOnTheMapXY(x, y).getSprite().getConsoleImage() == 'G' && this.getModel().getMap().getOnTheMapXY(x + 1, y).getPermeability() == Permeability.WALKABLE) {
@@ -251,9 +279,11 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
         }
     }
 
-    /**
-     * MonsterG Move Left Method
-     */
+   /**
+    * Méthode de déplacement du monstre vert vers la gauche
+    * @param x
+    * @param y
+    */
     public void MGMoveLeft(int x, int y) {
         if (this.getModel().getMap().getOnTheMapXY(x, y).getSprite().getConsoleImage() == 'G' && this.getModel().getMap().getOnTheMapXY(x - 1, y).getPermeability() == Permeability.WALKABLE) {
             this.getModel().getMap().setOnTheMapXY(MotionlessElementsFactory.createBackground(), x, y);
@@ -261,11 +291,11 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
         }
     }
 
-    /**
-     * Red Monsters Move method
-     *
-     * @throws InterruptedException
-     */
+   /**
+    * Méthode de déplacement des monstres rouges
+    * @param x
+    * @param y
+    */
     public void moveRMonster(int x, int y) {
         switch (rdirection) {
             case 1:
@@ -287,7 +317,9 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
-     * Monster Move Right method
+     *  Méthode de déplacement du monstre rouge vers la droite 
+     * @param x
+     * @param y
      */
     public void MRMoveRight(int x, int y) {
         if (this.getModel().getMap().getOnTheMapXY(x, y).getSprite().getConsoleImage() == 'R' && this.getModel().getMap().getOnTheMapXY(x + 1, y).getPermeability() == Permeability.WALKABLE) {
@@ -297,7 +329,9 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
-     * MonsterR Move Left method
+     *  Méthode de déplacement du monstre rouge vers la gauche
+     * @param x
+     * @param y
      */
     public void MRMoveLeft(int x, int y) {
         if (this.getModel().getMap().getOnTheMapXY(x, y).getSprite().getConsoleImage() == 'R' && this.getModel().getMap().getOnTheMapXY(x - 1, y).getPermeability() == Permeability.WALKABLE) {
@@ -307,7 +341,9 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
-     * MonsterR Move Up method
+     * Méthode de déplacement du monstre rouge vers le haut
+     * @param x
+     * @param y
      */
     public void MRMoveUp(int x, int y) {
         if (this.getModel().getMap().getOnTheMapXY(x, y).getSprite().getConsoleImage() == 'R' && this.getModel().getMap().getOnTheMapXY(x, y - 1).getPermeability() == Permeability.WALKABLE) {
@@ -317,7 +353,9 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
-     * MonsterR Move Down method
+     * Méthode de déplacement du monstre rouge vers le bas
+     * @param x
+     * @param y
      */
     public void MRMoveDown(int x, int y) {
         if (this.getModel().getMap().getOnTheMapXY(x, y).getSprite().getConsoleImage() == 'R' && this.getModel().getMap().getOnTheMapXY(x, y + 1).getPermeability() == Permeability.WALKABLE) {
@@ -328,6 +366,7 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
 
 
     /**
+     * Getter du view
      * @return this.view
      */
     private IView getView() {
@@ -335,6 +374,7 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
+     * Setter du view
      * @param view
      */
     private void setView(final IView view) {
@@ -342,6 +382,7 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
+     * Getter du model
      * @return this.model
      */
     private IModel getModel() {
@@ -349,6 +390,7 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
+     * Setter du model
      * @param model
      */
     private void setModel(final IModel model) {
@@ -356,6 +398,7 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
+     * Getter du StackOrder
      * @return this.stackOrder
      */
     private UserOrder getStackOrder() {

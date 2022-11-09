@@ -2,6 +2,11 @@ package entity.mobile;
 
 import static org.junit.Assert.*;
 
+/**
+ *  <h1>la Classe DiamondTest.</h1>
+ * 
+ */
+
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;

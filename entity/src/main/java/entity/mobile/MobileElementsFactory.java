@@ -2,29 +2,29 @@ package entity.mobile;
 public class MobileElementsFactory {
 
 	/**
-	 * The Green Monster 
+	 * Le monstre vert 
 	 */
 	private final static MonsterG monsterG = new MonsterG();
 	/**
-	 * The Red Monster
+	 * Le monstre rouge 
 	 */
 	private final static MonsterR monsterR = new MonsterR();
 	/**
-	 * The diamond
+	 * Le diamand
 	 */
 	private final static Diamond diamond = new Diamond();
 	/**
-	 * The rock
+	 * Le rocher
 	 */
 	private final static Boulder boulder = new Boulder();
 
 	/**
-	 * The list of mobile elements
+	 * La liste des éléments
 	 */
 	private static Mobile[] mobileElements = { monsterR, monsterG, diamond, boulder};
 
 	/**
-	 * Gets char from file
+	 * Obtenir le symbole du fichier
 	 * @param fileSymbol
 	 * @return
 	 */
@@ -38,7 +38,7 @@ public class MobileElementsFactory {
 	}
 
 	/**
-	 * creates Red Monster
+	 * Créer le monstre rouge 
 	 * @return Red Monster
 	 */
 	public static Mobile createMonsterR() {
@@ -46,7 +46,7 @@ public class MobileElementsFactory {
 	}
 	
 	/**
-	 * creates Green Monster
+	 * Créer le monstre vert 
 	 * @return Green Monster
 	 */
 	public static Mobile createMonsterG() {
@@ -54,16 +54,16 @@ public class MobileElementsFactory {
 	}
 
 	/**
-	 * creates diamond
-	 * @return
+	 * Créer le diamand
+	 * @return diamond
 	 */
 	public static Mobile createDiamond() {
 		return diamond;
 	}
 
 	/**
-	 * creates rock
-	 * @return
+	 * Créer le rocher
+	 * @return boulder
 	 */
 	public static Mobile createRock() {
 		return boulder;

@@ -18,7 +18,7 @@ import fr.exia.showboard.BoardFrame;
 import entity.IMap;
 
 /**
- *  la Classe View.
+ *  <h1>la Classe View.</h1>
  *
  * 
  */

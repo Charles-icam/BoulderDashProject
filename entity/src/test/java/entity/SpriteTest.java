@@ -12,6 +12,11 @@ import entity.mobile.Diamond;
 import entity.mobile.MonsterG;
 import entity.mobile.MonsterR;
 
+/**
+ *  <h1>la Classe SpriteTest.</h1>
+ * 
+ */
+
 public class SpriteTest {
 	static Boulder boulder;
 	static MonsterG monsterG;

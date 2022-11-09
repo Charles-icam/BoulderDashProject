@@ -8,38 +8,38 @@ import fr.exia.showboard.*;
 import entity.IElement;
 
 /**
- * <h1>The Interface IMobile.</h1>
+ * <h1>L'Interface IMobile.</h1>
  * @see IPawn
  * @see IElement
  */
 public interface IMobile extends IPawn, IElement {
 
     /**
-     * Move up.
+     * Méthode pour se déplacer au dessus.
      */
     void moveUp();
 
     /**
-     * Move left.
+     * Méthode pour se déplacer à gauche.
      */
     void moveLeft();
 
     /**
-     * Move down.
+     * Méthode pour se déplacer en bas..
      */
     void moveDown();
 
     /**
-     * Move right.
+     * Méthode pour se déplacer à droite.
      */
     void moveRight();
 
     /**
-     * Do nothing.
+     * Méthode Donothing (Ne rien faire).
      */
     void doNothing();
     /**
-     * Gets the x.
+     * Getter de x.
      *
      * @return the x
      */
@@ -47,7 +47,7 @@ public interface IMobile extends IPawn, IElement {
     int getX();
 
     /**
-     * Gets the y.
+     * Getter de y.
      *
      * @return the y
      */
@@ -55,38 +55,38 @@ public interface IMobile extends IPawn, IElement {
     int getY();
 
     /**
-     * Checks if is alive.
+     * Vérifie si le joueur est en vie.
      *
-     * @return the alive
+     * @return alive
      */
     Boolean isAlive();
 
 
     /**
-     *Gets the position
+     *Getter de la position
      */
     @Override
     Point getPosition();
 
 	/**
-	 * Die
+	 * Méthode Die
 	 */
 	public void die();
 
     /**
-     * Win
+     * Méthode Win
      */
     public void win();
 	
 	/**
-	 * Gets diamonds
+	 * Getter des diamands
 	 * @return int
 	 * 
 	 */
 	public int getDiamonds();
 
     /**
-     * Gets diamond
+     * Getter diamands
      * @return int
      *
      */

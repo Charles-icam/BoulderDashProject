@@ -151,7 +151,7 @@ public class MyPlayer extends Mobile {
 	}
 
 	/**
-	 * removes ground
+	 * Enlever la terre
 	 */
 	public void dig() {
 		if (this.getMap().getOnTheMapXY(this.getX(), this.getY()).getPermeability() == Permeability.DIGGABLE) {

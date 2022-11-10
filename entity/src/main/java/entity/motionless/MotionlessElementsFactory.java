@@ -1,9 +1,9 @@
 package entity.motionless;
 
 /**
- * <h1>A factory to create MotionlessElements objects.</h1>
+ * <h1>Une usine pour créer des objets MotionlessElements.</h1>
  *
- * @author Laetitia
+ * @author JUNIOR MABAYA
  * @version 0.1
  */
 public abstract class MotionlessElementsFactory {
@@ -14,12 +14,12 @@ public abstract class MotionlessElementsFactory {
 	private static final Ground ground = new Ground();
 
 	/**
-	 * The motionless elements is an array of all possible MotionlessElement.
+	 * Les éléments sans mouvement sont un tableau de tous les MotionlessElement possibles.
 	 */
 	private static MotionlessElement[] motionlessElements = {wall, background, door, ground};
 
 	/**
-	 * creates the wall
+	 * crée le mur
 	 * @return
 	 */
 	public static MotionlessElement createWall() {
@@ -27,7 +27,7 @@ public abstract class MotionlessElementsFactory {
 	}
 
 	/**
-	 * creates the door
+	 * crée la porte
 	 * @return
 	 */
 	public static MotionlessElement createDoor() {
@@ -35,7 +35,7 @@ public abstract class MotionlessElementsFactory {
 	}
 
 	/**
-	 * creates the background
+	 * crée l'arriere plan
 	 * @return
 	 */
 	public static MotionlessElement createBackground() {
@@ -44,7 +44,7 @@ public abstract class MotionlessElementsFactory {
 	
 	/**
 	 * 
-	 * creates the ground
+	 * crée le terrain
 	 * @return
 	 */
 	public static MotionlessElement createGround() {
@@ -52,10 +52,10 @@ public abstract class MotionlessElementsFactory {
 	}
 
 	/**
-	 * Gets the good MotionlessElement from file symbol.
+	 * Obtienir le bon MotionlessElement du fichier symbole.
 	 *
-	 * @param fileSymbol the file symbol
-	 * @return the from file symbol
+	 * @param fileSymbol le symbole du fichier
+	 * @return le symbole du fichier de départ
 	 */
 	public static MotionlessElement getFromFileSymbol(final char fileSymbol) {
 		for (final MotionlessElement motionlessElement : motionlessElements) {

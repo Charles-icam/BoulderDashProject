@@ -1,26 +1,26 @@
 package entity;
 
 /**
- * <h1>Les Permeability Enum.</h1>
+ * <h1>Les Perméabilités Enum.</h1>
  *
- * @author Charles Muamba
+ * @author JUNIOR MABAYA
  * @version 0.1
  */
 public enum Permeability {
 
-	/** The blocking. */
+	/** Le blocage. */
 	WALL,
-	/** The penetrable. */
+	/** Le pénétrable. */
 	WALKABLE,
-	/** The killing. */
+	/** Le tueur. */
 	KILLABLE,
-	/** The pushing. */
+	/** La poussée. */
 	BOULDER,
-	/** The win. */
+	/** La victoire. */
 	EXIT,
-	/** The diggable. */
+	/** Le diggable. */
 	DIGGABLE,
-	/** The diamond. */
+	/** Le diamant. */
 	DIAMOND;
 
 }

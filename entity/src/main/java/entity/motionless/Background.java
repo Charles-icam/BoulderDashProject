@@ -4,7 +4,7 @@ import entity.Permeability;
 import entity.Sprite;
 
 /**
- * @author Eliott Holel
+ * @author JUNIOR MABAYA
  *
  */
 public class Background extends MotionlessElement{

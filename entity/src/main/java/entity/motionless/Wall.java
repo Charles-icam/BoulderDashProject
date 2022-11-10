@@ -4,16 +4,16 @@ import entity.Permeability;
 import entity.Sprite;
 
 /**
- * @author Laetitia
+ * @author JUNIOR MABAYA
  *
  */
 class Wall extends MotionlessElement {
 
-    /** The Constant SPRITE. */
+    /** La Constante SPRITE. */
     private static final Sprite SPRITE = new Sprite('#', "Wall.png");
 
     /**
-     * Instantiates a new wall.
+     * Instantiation d'un nouveau mur.
      */
     Wall() {
         super(SPRITE, Permeability.WALL);

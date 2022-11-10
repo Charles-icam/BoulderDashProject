@@ -4,16 +4,16 @@ import entity.Permeability;
 import entity.Sprite;
 
 /**
- * @author Laetitia
+ * @author JUNIOR MABAYA
  *
  */
 public class Door extends MotionlessElement {
 	
-	    /** The Constant SPRITE. */
+	    /** La Constante SPRITE. */
 	    private static final Sprite SPRITE = new Sprite('D', "Door.png");
 
 	    /**
-	     * Instantiates a new door.
+	     * Instantiation d'un nouveau door.
 	     */
 	    Door() {
 	        super(SPRITE, Permeability.EXIT);

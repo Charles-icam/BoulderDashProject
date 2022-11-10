@@ -4,15 +4,15 @@ import entity.Permeability;
 import entity.Sprite;
 
 /**
- * @author Laetitia
+ * @author JUNIOR MABAYA
  *
  */
 public class Ground extends MotionlessElement{
-	 /** The Constant SPRITE. */
+	 /** LA Constante SPRITE. */
     private static final Sprite SPRITE = new Sprite(' ', "Ground.png");
 
     /**
-     * Instantiates a new ground.
+     * Instantiation d'un nouveau terrain.
      */
     Ground() {
         super(SPRITE, Permeability.DIGGABLE);
